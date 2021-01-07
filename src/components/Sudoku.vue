@@ -173,8 +173,10 @@ export default {
 </script>
 
 <style scoped>
-    .sudoku { 
-        font-family: Arial, Helvetica, sans-serif; 
+    .sudoku {
+        height: 100wh;
+        overflow-y: scroll;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .cell:not(.original) { color:blue; }
     .cell.active { border: 1px solid red; }
@@ -183,7 +185,11 @@ export default {
     .cell.original { font-weight: bold;}
     .cell.right-border { border-right-width: 3px; }
     .cell.bottom-border { border-bottom-width: 3px; }
-
+    .selector {
+        float: right;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+    }
     .title {
         font-size: 40px;
         padding-top: 40px;
@@ -204,11 +210,26 @@ export default {
         text-align: center;
         background-color: white;
     }
+    .btn_number {
+        color:blue;
+        font-weight: normal;
+        border: 1px solid #bbb;
+    }
+    .btn,
+    .btn_number {
+        box-sizing: border-box;
+        background: none;
+        border: none;
+        width: 60px;
+        height: 45px;
+    }
+    .btn:focus,
+    .selector:focus {
+        outline: none;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+    }
     @media screen and (max-width: 426px) {     /* Стили мобильных устройств */
-        .sudoku {
-            height: 100wh;
-            overflow-y: hidden;
-        }
         .grid {
             position: absolute;
             top: 60px;
@@ -223,12 +244,74 @@ export default {
         }
         .btn,
         .btn_number {
-            box-sizing: border-box;
-            background: none;
-            border: none;
-            width: 60px;
-            height: 45px;
             margin: 2px 0 0 0;
+        }
+        .selector {
+            margin: 15px 15px 0 0;
+        }
+        .numbers_row {
+            margin-top: 380px;
+        }
+        .btn_number {
+            width: 1.95rem;
+            height: 2rem;
+            font-size: 22px;
+            margin: 0 0 0 3.55px;
+        }
+        .btn_number {
+            color:blue;
+            font-weight: normal;
+            border: 1px solid #bbb;
+            width: 1.95rem;
+            height: 2rem;
+            font-size: 22px;
+            margin: 0 0 0 3.55px;
+        }
+        @media screen and (max-width:320px) { /* Стили для малых мобильных устройств */
+            .btn_number {
+                margin-left: 5px;
+            }
+        }
+        @media screen and (min-width: 321px) and (max-width: 375px) { /* Стили для средних мобильных устройств */
+            .btn_number {
+                margin: 0 0 0 1%;
+            }
+            .btn_number:first-child {
+                margin-left: 5%;
+            }
+        }
+        @media screen and (min-width: 376px) and (max-width: 390px) { /* Стили для средних мобильных устройств */
+            .btn_number {
+                margin: 0 0 0 2.58%;
+            }
+            .btn_number:first-child {
+                margin-left: 2.5%;
+            }
+        }
+        @media screen and (min-width: 391px) and (max-width: 426px) { /* Стили для больших мобильных устройств */
+            .btn_number {
+                margin: 0 0 0 2.4%;
+            }
+            .btn_number:first-child {
+                margin-left: 5%;
+            }
+        }
+    }
+    @media screen and (min-width: 427px) and (max-width: 520px) { /* Стили для планшетных устройств */
+        .grid {
+            position: absolute;
+            top: 60px;
+            left: 2rem;
+            right: 2rem;
+        }
+        .cell {
+            width: 50px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 28px;
+        }
+        .btn:first-of-type {
+            margin: 0.5rem 0 0 1.5rem;
         }
         .btn:focus,
         .selector:focus {
@@ -237,10 +320,8 @@ export default {
             border-radius: 5px;
         }
         .selector {
-            float: right;
-            margin: 15px 15px 0 0;
-            border: 1px solid #bbb;
-            border-radius: 5px;
+            height: 2rem;
+            margin: 1rem 2rem 0 0;
         }
         .numbers_row {
             margin-top: 380px;
@@ -254,36 +335,174 @@ export default {
             font-size: 22px;
             margin: 0 0 0 3.55px;
         }
-        @media screen and (max-width:320px) {
-            .btn_number {
-                margin-left: 5px;
-            }
-        }
-        @media screen and (min-width: 321px) and (max-width: 375px) {
-            .btn_number {
-                margin: 0 0 0 1%;
-            }
-            .btn_number:first-child {
-                margin-left: 5%;
-            }
-        }
-        @media screen and (min-width: 376px) and (max-width: 390px) {
+        @media screen and (min-width: 427px) and (max-width: 469px) {
             .btn_number {
                 margin: 0 0 0 2.58%;
             }
             .btn_number:first-child {
-                margin-left: 2.5%;
+                margin-left: 9%;
             }
         }
-        @media screen and (min-width: 391px) and (max-width: 426px) {
+        @media screen and (min-width: 469px) and (max-width: 520px) {
             .btn_number {
-                margin: 0 0 0 2.4%;
+                margin: 0 0 0 2.58%;
             }
             .btn_number:first-child {
-                margin-left: 5%;
+                margin-left: 10%;
+            }
+            .cell {
+                height: 45px;
+                line-height: 45px;
+            }
+            .numbers_row {
+                margin-top: 420px;
             }
         }
-        
     }
+    @media screen and (min-width: 521px) {
+        .grid {
+            position: absolute;
+            top: 80px;
+            left: 2rem;
+            right: 2rem;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 30px;
+        }
+        .btn {
+            font-size: 22px;
+            margin-left: 1rem;
+        }
+        .btn:first-of-type {
+            margin: 1rem 0 0 2rem;
+        }
+        .btn:focus,
+        .selector:focus {
+            outline: none;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+        .selector {
+            height: 2.5rem;
+            width: 10rem;
+            font-size: 22px;
+            margin: 1.5rem 2.2rem 0 0;
+        }
+        .numbers_row {
+            margin-top: 480px;
+        }
+        .btn_number {
+            color:blue;
+            font-weight: normal;
+            border: 1px solid #bbb;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 25px;
+            margin: 0 0 0 3.55px;
+        }
+        .btn_number {
+            margin: 0 0 0 2.58%;
+        }
+        .btn_number:first-child {
+            margin-left: 5%;
+        }
+        @media screen and (min-width: 550px) and (max-width: 610px) {
+            .grid {
+                left: 1rem;
+                right: 1rem;
+            }
+            .btn_number {
+                margin: 0 0 0 2.58%;
+            }
+            .btn_number:first-child {
+                margin-left: 10%;
+            }
+        }
+        @media screen and (min-width: 611px) and (max-width: 640px) {
+            .btn_number:first-child {
+                margin-left: 10%;
+            }
+        }
+        @media screen and (min-width: 641px) and (max-width: 699px) {
+            .btn_number:first-child {
+                margin-left: 12%;
+            }
+        }
+        @media screen and (min-width: 700px) and (max-width: 760px) {
+            .btn_number:first-child {
+                margin-left: 14%;
+            }
+        }
+        @media screen and (min-width: 761px) and (max-width: 830px) {
+            .btn_number:first-child {
+                margin-left: 16%;
+            }
+        }
+        @media screen and (min-width: 830px) and (max-width: 910px) {
+            .btn_number:first-child {
+                margin-left: 20%;
+            }
+        }
+        @media screen and (min-width: 911px) and (max-width: 970px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 23%;
+            }
+        }
+        @media screen and (min-width: 971px) and (max-width: 980px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 25%;
+            }
+        }
+        @media screen and (min-width: 981px) and (max-width: 1050px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 26%;
+            }
+        }
+        @media screen and (min-width: 1050px) and (max-width: 1150px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 27%;
+            }
+        }
+        @media screen and (min-width: 1151px) and (max-width: 1250px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 29%;
+            }
+        }
+        @media screen and (min-width: 1251px) and (max-width: 1350px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 31vw;
+            }
+        }
+        @media screen and (min-width: 1351px) and (max-width: 1530px) {
+            .btn_number {
+                margin: 0 0 0 1rem;
+            }
+            .btn_number:first-child {
+                margin-left: 33vw;
+            }
+        }
+    }
+    
     
 </style>
