@@ -157,71 +157,20 @@ export default {
 </script>
 
 <style scoped>
-    .sudoku {
-        width: 100vw;
-        background: tomato;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .title {
-        padding-top: 40px;
-        width: 100vw;
-        text-align: center;
-        color: white;
-        font-size: 40px;
-    }
-    .btn_div {
-        display: flex;
-        justify-content: space-around;
-    }
-    .btn {
-        margin: 15px 0 0 0;
-        font-size: 16px;
-        width: 150px; 
-        height: 30px;
-    }
-    .grid {
-        width: calc(9*40px);
-        position: absolute;
-        top: 200px;
-        left: 185px;
-    }
-    .row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: none;
-    }
-    .cell {
-        display: block;
-        width: 40px;
-        height: 40px;
-        box-sizing: border-box;
-        border: 1px solid #bbb;
-        line-height: 40px;
-        font-size: 24px;
-        text-align: center;
-        background-color: white;
-    }
-    .cell.right-border { border-right-width: 3px; }
-    .cell.bottom-border { border-bottom-width: 3px; }
-    .cell.original { font-weight: bold; }
-    .cell:not(.original) { cursor: pointer; }
-    .cell.active { border: 1px solid red; }
-    .cell.invalid { color: red}
     @media screen and (max-width: 460px) {
         .sudoku {
-            height: 600px;
+            height: 900px;
         }
 
     }
     @media screen and (max-width: 461px) and (max-width: 800px){
         .sudoku {
-            height: 900px;
+            height: 1200px;
         }
     }
     @media screen and (max-width: 801px) {
         .sudoku {
-            height: 1300px;
+            height: 1700px;
         }
     }
 </style>
