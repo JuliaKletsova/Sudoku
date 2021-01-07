@@ -251,6 +251,11 @@ export default {
         }
         .numbers_row {
             margin-top: 380px;
+            width: 99%;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
         .btn_number {
             width: 1.95rem;
@@ -267,37 +272,8 @@ export default {
             font-size: 22px;
             margin: 0 0 0 3.55px;
         }
-        @media screen and (max-width:320px) { /* Стили для малых мобильных устройств */
-            .btn_number {
-                margin-left: 5px;
-            }
-        }
-        @media screen and (min-width: 321px) and (max-width: 375px) { /* Стили для средних мобильных устройств */
-            .btn_number {
-                margin: 0 0 0 1%;
-            }
-            .btn_number:first-child {
-                margin-left: 5%;
-            }
-        }
-        @media screen and (min-width: 376px) and (max-width: 390px) { /* Стили для средних мобильных устройств */
-            .btn_number {
-                margin: 0 0 0 2.58%;
-            }
-            .btn_number:first-child {
-                margin-left: 2.5%;
-            }
-        }
-        @media screen and (min-width: 391px) and (max-width: 426px) { /* Стили для больших мобильных устройств */
-            .btn_number {
-                margin: 0 0 0 2.4%;
-            }
-            .btn_number:first-child {
-                margin-left: 5%;
-            }
-        }
     }
-    @media screen and (min-width: 427px) and (max-width: 520px) { /* Стили для планшетных устройств */
+    @media screen and (min-width: 427px) and (max-width: 520px) { 
         .grid {
             position: absolute;
             top: 60px;
@@ -325,6 +301,11 @@ export default {
         }
         .numbers_row {
             margin-top: 380px;
+            width: 99%;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
         .btn_number {
             color:blue;
@@ -335,42 +316,19 @@ export default {
             font-size: 22px;
             margin: 0 0 0 3.55px;
         }
-        @media screen and (min-width: 427px) and (max-width: 469px) {
-            .btn_number {
-                margin: 0 0 0 2.58%;
-            }
-            .btn_number:first-child {
-                margin-left: 9%;
-            }
-        }
-        @media screen and (min-width: 469px) and (max-width: 520px) {
-            .btn_number {
-                margin: 0 0 0 2.58%;
-            }
-            .btn_number:first-child {
-                margin-left: 10%;
-            }
-            .cell {
-                height: 45px;
-                line-height: 45px;
-            }
-            .numbers_row {
-                margin-top: 420px;
-            }
-        }
     }
     @media screen and (min-width: 521px) {
         .grid {
             position: absolute;
-            top: 80px;
+            top: 90px;
             left: 2rem;
             right: 2rem;
         }
         .cell {
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 30px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 36px;
         }
         .btn {
             font-size: 22px;
@@ -392,7 +350,14 @@ export default {
             margin: 1.5rem 2.2rem 0 0;
         }
         .numbers_row {
-            margin-top: 480px;
+            margin-top: 600px;
+            width: 99%;
+            max-width: 500px;
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-self: center;
+            align-items: center;
         }
         .btn_number {
             color:blue;
@@ -407,102 +372,67 @@ export default {
             margin: 0 0 0 2.58%;
         }
         .btn_number:first-child {
-            margin-left: 5%;
+            margin-left: 40vw;
         }
-        @media screen and (min-width: 550px) and (max-width: 610px) {
-            .grid {
-                left: 1rem;
-                right: 1rem;
-            }
-            .btn_number {
-                margin: 0 0 0 2.58%;
-            }
+        @media screen and (min-width: 521px) and (max-width: 560px)  {
             .btn_number:first-child {
-                margin-left: 10%;
+                margin-left: 5vw;
             }
         }
-        @media screen and (min-width: 611px) and (max-width: 640px) {
+        @media screen and (min-width: 561px) and (max-width: 660px)  {
             .btn_number:first-child {
-                margin-left: 10%;
+                margin-left: 15vw;
             }
         }
-        @media screen and (min-width: 641px) and (max-width: 699px) {
+        @media screen and (min-width: 661px) and (max-width: 760px)  {
             .btn_number:first-child {
-                margin-left: 12%;
+                margin-left: 25vw;
             }
         }
-        @media screen and (min-width: 700px) and (max-width: 760px) {
-            .btn_number:first-child {
-                margin-left: 14%;
-            }
-        }
-        @media screen and (min-width: 761px) and (max-width: 830px) {
-            .btn_number:first-child {
-                margin-left: 16%;
-            }
-        }
-        @media screen and (min-width: 830px) and (max-width: 910px) {
-            .btn_number:first-child {
-                margin-left: 20%;
-            }
-        }
-        @media screen and (min-width: 911px) and (max-width: 970px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 23%;
-            }
-        }
-        @media screen and (min-width: 971px) and (max-width: 980px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 25%;
-            }
-        }
-        @media screen and (min-width: 981px) and (max-width: 1050px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 26%;
-            }
-        }
-        @media screen and (min-width: 1050px) and (max-width: 1150px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 27%;
-            }
-        }
-        @media screen and (min-width: 1151px) and (max-width: 1250px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 29%;
-            }
-        }
-        @media screen and (min-width: 1251px) and (max-width: 1350px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
-            .btn_number:first-child {
-                margin-left: 31vw;
-            }
-        }
-        @media screen and (min-width: 1351px) and (max-width: 1530px) {
-            .btn_number {
-                margin: 0 0 0 1rem;
-            }
+        @media screen and (min-width: 761px) and (max-width: 860px)  {
             .btn_number:first-child {
                 margin-left: 33vw;
             }
         }
+        @media screen and (min-width: 861px) and (max-width: 930px)  {
+            .btn_number:first-child {
+                margin-left: 43vw;
+            }
+        }
+        @media screen and (min-width: 931px) and (max-width: 1000px)  {
+            .btn_number:first-child {
+                margin-left: 50vw;
+            }
+        }
+        @media screen and (min-width: 1001px) and (max-width: 1200px)  {
+            .btn_number:first-child {
+                margin-left: 55vw;
+            }
+        }
+        @media screen and (min-width: 1201px) and (max-width: 1400px)  {
+            .btn_number:first-child {
+                margin-left: 59vw;
+            }
+        }
+        @media screen and (min-width: 1401px) and (max-width: 1550px)  {
+            .btn_number:first-child {
+                margin-left: 65vw;
+            }
+        }
+        @media screen and (min-width: 1551px) and (max-width: 1800px)  {
+            .btn_number:first-child {
+                margin-left: 70vw;
+            }
+        }
+        @media screen and (min-width: 1801px) and (max-width: 2100px) {
+            .btn_number:first-child {
+                margin-left: 75vw;
+            }
+        }
+        @media screen and (min-width: 2101px) {
+            .btn_number:first-child {
+                margin-left: 77vw;
+            }
+        }
     }
-    
-    
 </style>
